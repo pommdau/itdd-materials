@@ -32,7 +32,7 @@
 
 import Foundation
 
-public class AppModel {
+class AppModel {
   
   static let instance = AppModel()
   
