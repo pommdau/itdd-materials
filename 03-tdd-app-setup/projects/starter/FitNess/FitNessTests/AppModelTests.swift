@@ -30,20 +30,15 @@
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 /// THE SOFTWARE.
 
-import Foundation
+import XCTest
+import FitNess
 
-public class AppModel {
+class AppModelTests: XCTestCase {
   
-  static let instance = AppModel()
+  func testAppModel_whenInitialized_isInNotStartedState() {
+    let sut = AppModel()
+    let initialState = sut.appState
+    XCTAssertEqual(initialState, AppState.notStarted)
+  }
   
-  // MARK: - Properties
-  
-  public var appState: AppState = .notStarted
-  
-  // MARK: - Lifecycles
-    
-  public init() {}
-  
-  // MARK: - Helpers
-
 }
