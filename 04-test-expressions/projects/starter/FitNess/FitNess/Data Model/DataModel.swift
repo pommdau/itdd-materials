@@ -13,7 +13,6 @@ class DataModel {
     return false
   }
 
-  
   var goal: Int?
   var steps: Int = 0
   
