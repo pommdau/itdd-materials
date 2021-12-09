@@ -35,16 +35,30 @@ import FitNess
 
 class AppModelTests: XCTestCase {
   
+  // MARK: - Properties
+  
+  var sut: AppModel!
+  
+  // MARK: - Lifecycles
+    
+  override func setUpWithError() throws {
+    try super.setUpWithError()
+    sut = AppModel()
+  }
+
+  override func tearDownWithError() throws {
+    sut = nil
+    try super.tearDownWithError()
+  }
+  
+  // MARK: - Tests
+  
   func testAppModel_whenInitialized_isInNotStartedState() {
-    let sut = AppModel()
     let initialState = sut.appState
     XCTAssertEqual(initialState, AppState.notStarted)
   }
   
   func testAppModel_whenStarted_isInInProgressState() {
-    // 1 given app in not started
-    let sut = AppModel()
-
     // 2 when started
     sut.start()
 

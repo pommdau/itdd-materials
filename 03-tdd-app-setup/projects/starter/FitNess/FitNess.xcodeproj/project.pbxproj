@@ -17,8 +17,8 @@
 		4CBCDEB72701426800E8992C /* StepCountController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CBCDEB62701426800E8992C /* StepCountController.swift */; };
 		4CBCDEBC270142DF00E8992C /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CBCDEBB270142DF00E8992C /* AppState.swift */; };
 		4CBCDEBE270142EE00E8992C /* AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CBCDEBD270142EE00E8992C /* AppModel.swift */; };
-		DA595F9B276235B000C31880 /* FitNessTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA595F9A276235B000C31880 /* FitNessTests.swift */; };
 		DA595FA22762363600C31880 /* AppModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA595FA12762363600C31880 /* AppModelTests.swift */; };
+		DA595FA827623B1100C31880 /* StepCountControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA595FA727623B1100C31880 /* StepCountControllerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,8 +45,8 @@
 		4CBCDEBB270142DF00E8992C /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		4CBCDEBD270142EE00E8992C /* AppModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppModel.swift; sourceTree = "<group>"; };
 		DA595F98276235B000C31880 /* FitNessTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FitNessTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		DA595F9A276235B000C31880 /* FitNessTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitNessTests.swift; sourceTree = "<group>"; };
 		DA595FA12762363600C31880 /* AppModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppModelTests.swift; sourceTree = "<group>"; };
+		DA595FA727623B1100C31880 /* StepCountControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepCountControllerTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,10 +140,26 @@
 		DA595F99276235B000C31880 /* FitNessTests */ = {
 			isa = PBXGroup;
 			children = (
-				DA595F9A276235B000C31880 /* FitNessTests.swift */,
-				DA595FA12762363600C31880 /* AppModelTests.swift */,
+				DA595FA327623AA800C31880 /* App Model */,
+				DA595FA427623AB200C31880 /* UI Layer */,
 			);
 			path = FitNessTests;
+			sourceTree = "<group>";
+		};
+		DA595FA327623AA800C31880 /* App Model */ = {
+			isa = PBXGroup;
+			children = (
+				DA595FA12762363600C31880 /* AppModelTests.swift */,
+			);
+			path = "App Model";
+			sourceTree = "<group>";
+		};
+		DA595FA427623AB200C31880 /* UI Layer */ = {
+			isa = PBXGroup;
+			children = (
+				DA595FA727623B1100C31880 /* StepCountControllerTests.swift */,
+			);
+			path = "UI Layer";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -283,8 +299,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DA595F9B276235B000C31880 /* FitNessTests.swift in Sources */,
 				DA595FA22762363600C31880 /* AppModelTests.swift in Sources */,
+				DA595FA827623B1100C31880 /* StepCountControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
