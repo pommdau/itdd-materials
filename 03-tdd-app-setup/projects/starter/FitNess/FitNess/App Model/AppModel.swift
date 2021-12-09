@@ -32,8 +32,22 @@
 
 import Foundation
 
-public class AppModel {
+class AppModel {
+  
   static let instance = AppModel()
-
+  
+  // MARK: - Properties
+  
+  public var appState: AppState = .notStarted
+  
+  // MARK: - Lifecycles
+    
   public init() {}
+  
+  // MARK: - Helpers
+
+  public func start() {
+    appState = .inProgress
+  }
+  
 }
