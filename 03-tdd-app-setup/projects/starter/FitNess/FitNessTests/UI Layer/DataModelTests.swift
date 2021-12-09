@@ -31,77 +31,27 @@
 /// THE SOFTWARE.
 
 import XCTest
-@testable import FitNess
 
-class AppModelTests: XCTestCase {
-  //swiftlint:disable implicitly_unwrapped_optional
-  var sut: AppModel!
+class DataModelTests: XCTestCase {
 
-  override func setUpWithError() throws {
-    try super.setUpWithError()
-    sut = AppModel()
-  }
+    override func setUpWithError() throws {
+        // Put setup code here. This method is called before the invocation of each test method in the class.
+    }
 
-  override func tearDownWithError() throws {
-    sut = nil
-    try super.tearDownWithError()
-  }
+    override func tearDownWithError() throws {
+        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    }
 
-  // MARK: - Given
-  
-  func givenGoalSet() {
-    sut.dataModel.goal = 1000
-  }
-  
-  func givenInProgress() {
-    givenGoalSet()
-    try! sut.start()
-  }
-  
-  func testStart_withGoalSet_doesNotThrow() {
-    // given
-    givenGoalSet()
+    func testExample() throws {
+        // This is an example of a functional test case.
+        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    }
 
-    // then
-    XCTAssertNoThrow(try sut.start())
-  }
-  
-  // MARK: - Lifecycle
-  
-  func testAppModel_whenInitialized_isInNotStartedState() {
-    let initialState = sut.appState
-    XCTAssertEqual(initialState, AppState.notStarted)
-  }
-
-  // MARK: - Start
-  
-  func testModelWithNoGoal_whenStarted_throwsError() {
-    XCTAssertThrowsError(try sut.start())
-  }
-  
-  func testAppModel_whenStarted_isInInProgressState() {
-    // given
-    givenGoalSet()
-    
-    // when started
-    try? sut.start()
-
-    // then it is in inProgress
-    let observedState = sut.appState
-    XCTAssertEqual(observedState, .inProgress)
-  }
-  
-  // MARK: - Restart
-
-  func testAppModel_whenReset_isInNotStartedState() {
-    // given
-    givenInProgress()
-
-    // when
-    sut.restart()
-
-    // then
-    XCTAssertEqual(sut.appState, .notStarted)
-  }
+    func testPerformanceExample() throws {
+        // This is an example of a performance test case.
+        self.measure {
+            // Put the code you want to measure the time of here.
+        }
+    }
 
 }
