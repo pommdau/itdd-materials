@@ -46,4 +46,8 @@ public class AppModel {
   
   // MARK: - Helpers
 
+  public func start() {
+    appState = .inProgress
+  }
+  
 }
