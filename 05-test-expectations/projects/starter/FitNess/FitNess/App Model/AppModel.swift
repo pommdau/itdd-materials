@@ -35,8 +35,15 @@ import Foundation
 class AppModel {
   static let instance = AppModel()
   let dataModel = DataModel()
+  
+  private(set) var appState: AppState = .notStarted {
+    didSet {
+      stateChangedCallback?(self)
+    }
+  }
 
-  var appState: AppState = .notStarted
+  
+  var stateChangedCallback: ((AppModel) -> ())?
 
   func start() throws {
     guard dataModel.goal != nil else {
