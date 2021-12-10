@@ -97,6 +97,34 @@ class AlertCenterTests: XCTestCase {
     // then
     wait(for: [exp], timeout: 1)
   }
+  
+  // MARK: - Notification Contents
+
+  func testNotification_whenPosted_containsAlertObject() {
+    // given
+    let alert = Alert("test contents")
+    let exp = expectation(forNotification: AlertNotification.name,
+                          object: sut,
+                          handler: nil)
+
+    var postedAlert: Alert?
+    sut.notificationCenter.addObserver(forName: AlertNotification.name,
+                                       object: sut,
+                                       queue: nil) { notification in
+      let info = notification.userInfo
+      postedAlert = info?[AlertNotification.Keys.alert] as? Alert
+    }
+
+    // when
+    sut.postAlert(alert: alert)  // userinfoにAlertオブジェクトを含める
+
+    // then
+    wait(for: [exp], timeout: 1)
+    XCTAssertNotNil(postedAlert, "should have sent an alert")
+    XCTAssertEqual(alert,
+                   postedAlert,
+                   "should have sent the original alert")
+  }
 
 
 }

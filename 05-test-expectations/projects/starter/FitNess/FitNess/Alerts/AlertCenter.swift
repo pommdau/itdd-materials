@@ -25,7 +25,8 @@ class AlertCenter {
     alertQueue.append(alert)
     
     let notification = Notification(name: AlertNotification.name,
-                                    object: self)
+                                    object: self,
+                                    userInfo: [AlertNotification.Keys.alert: alert])
     notificationCenter.post(notification)
   }
     
