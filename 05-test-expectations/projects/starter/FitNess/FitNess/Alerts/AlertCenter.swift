@@ -23,5 +23,18 @@ class AlertCenter {
 }
 
 // MARK: - Class Helpers
+
 extension AlertCenter {
+  
+  class func listenForAlerts(
+    _ callback: @escaping (AlertCenter) -> ()) {
+
+    instance.notificationCenter
+      .addObserver(forName: AlertNotification.name,
+                   object: instance,
+                   queue: .main) { _ in
+      callback(instance)
+    }
+  }
+
 }
