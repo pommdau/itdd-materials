@@ -8,6 +8,7 @@ class RootViewControllerTests: XCTestCase {
   override func setUp() {
     super.setUp()
     sut = getRootViewController()
+    sut.reset()
   }
   
   override func tearDown() {

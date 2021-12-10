@@ -3,7 +3,15 @@ import Foundation
 class AlertCenter {
   static var instance = AlertCenter()
   
+  // MARK: - Properties
+  
   private var alertQueue: [Alert] = []
+  
+  var alertCount: Int {
+    return alertQueue.count
+  }
+  
+  // MARK: - Lifecycles
 
   init(center: NotificationCenter = .default) {
     self.notificationCenter = center
@@ -20,6 +28,13 @@ class AlertCenter {
                                     object: self)
     notificationCenter.post(notification)
   }
+    
+  // MARK: - Alert Handling
+
+  func clearAlerts() {
+    alertQueue.removeAll()
+  }
+
 }
 
 // MARK: - Class Helpers
