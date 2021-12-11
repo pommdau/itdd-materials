@@ -32,7 +32,6 @@
 		4CCF441C270687DC00DD29AB /* DataModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CCF441B270687DC00DD29AB /* DataModelTests.swift */; };
 		4CF6A59B270A567F006F0292 /* ViewControllers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF6A59A270A567F006F0292 /* ViewControllers.swift */; };
 		4CF6A59E270D02F1006F0292 /* RootViewController+Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF6A59D270D02F1006F0292 /* RootViewController+Tests.swift */; };
-		DA69232F2762E2D500A9F44C /* ButtonObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA69232E2762E2D500A9F44C /* ButtonObserver.swift */; };
 		DA69233127630F0400A9F44C /* RootViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA69233027630F0400A9F44C /* RootViewControllerTests.swift */; };
 		DA6923342764B54900A9F44C /* Notification+Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6923332764B54900A9F44C /* Notification+Tests.swift */; };
 /* End PBXBuildFile section */
@@ -76,7 +75,6 @@
 		4CCF441B270687DC00DD29AB /* DataModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModelTests.swift; sourceTree = "<group>"; };
 		4CF6A59A270A567F006F0292 /* ViewControllers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllers.swift; sourceTree = "<group>"; };
 		4CF6A59D270D02F1006F0292 /* RootViewController+Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RootViewController+Tests.swift"; sourceTree = "<group>"; };
-		DA69232E2762E2D500A9F44C /* ButtonObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonObserver.swift; sourceTree = "<group>"; };
 		DA69233027630F0400A9F44C /* RootViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewControllerTests.swift; sourceTree = "<group>"; };
 		DA6923332764B54900A9F44C /* Notification+Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification+Tests.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -267,7 +265,6 @@
 			isa = PBXGroup;
 			children = (
 				4CF6A59A270A567F006F0292 /* ViewControllers.swift */,
-				DA69232E2762E2D500A9F44C /* ButtonObserver.swift */,
 			);
 			path = "Test Classes";
 			sourceTree = "<group>";
@@ -451,7 +448,6 @@
 				DA6923342764B54900A9F44C /* Notification+Tests.swift in Sources */,
 				4CBEFC98270D24EF00EB190B /* AlertCenterTests.swift in Sources */,
 				4CF6A59B270A567F006F0292 /* ViewControllers.swift in Sources */,
-				DA69232F2762E2D500A9F44C /* ButtonObserver.swift in Sources */,
 				DA69233127630F0400A9F44C /* RootViewControllerTests.swift in Sources */,
 				4CCF440C2705284300DD29AB /* AppModelTests.swift in Sources */,
 			);
