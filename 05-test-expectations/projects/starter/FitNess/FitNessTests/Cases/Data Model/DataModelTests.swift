@@ -155,4 +155,22 @@ class DataModelTests: XCTestCase {
     // then
     XCTAssertTrue(sut.caught)
   }
+  
+  // MARK: - Alerts
+
+  func testWhenStepsHit25Percent_milestoneNotificationGenerated() {
+    // given
+    sut.goal = 400
+    let exp = expectation(forNotification: AlertNotification.name,
+                          object: nil) { notification -> Bool in
+      return notification.alert == Alert.milestone25Percent
+    }
+
+    // when
+    sut.steps = 100
+
+    // then
+    wait(for: [exp], timeout: 1)
+  }
+
 }
