@@ -1,6 +1,9 @@
 import Foundation
 
 class DataModel {
+  // MARK: - Alerts
+  var sentAlerts: [Alert] = []
+
   // MARK: - Goal Calculation
   var goal: Int?
   
@@ -33,21 +36,27 @@ class DataModel {
     steps = 0
     distance = 0
     nessie.distance = 0
+    sentAlerts.removeAll()
   }
   
   // MARK: - Updates due to distance
-  func updateForSteps() {
-    guard let goal = goal else { return }
-    
-    if Double(steps) >= Double(goal) * 1.00 {
-      AlertCenter.instance.postAlert(alert: Alert.goalComplete)
-    } else if Double(steps) >= Double(goal) * 0.75 {
-      AlertCenter.instance.postAlert(alert: Alert.milestone75Percent)
-    } else if Double(steps) >= Double(goal) * 0.50 {
-      AlertCenter.instance.postAlert(alert: Alert.milestone50Percent)
-    }  else if Double(steps) >= Double(goal) * 0.25 {
-      AlertCenter.instance.postAlert(alert: Alert.milestone25Percent)
+  
+  private func checkThreshold(percent: Double, alert: Alert) {
+    guard !sentAlerts.contains(alert),
+      let goal = goal else {
+        return
     }
+    if Double(steps) >= Double(goal) * percent  {
+      AlertCenter.instance.postAlert(alert: alert)
+      sentAlerts.append(alert)
+    }
+  }
+
+  func updateForSteps() {
+    checkThreshold(percent: 0.25, alert: .milestone25Percent)
+    checkThreshold(percent: 0.50, alert: .milestone50Percent)
+    checkThreshold(percent: 0.75, alert: .milestone75Percent)
+    checkThreshold(percent: 1.00, alert: .goalComplete)
   }
 
 }

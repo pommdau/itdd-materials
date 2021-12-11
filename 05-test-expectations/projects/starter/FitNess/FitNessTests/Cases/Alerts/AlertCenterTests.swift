@@ -126,5 +126,18 @@ class AlertCenterTests: XCTestCase {
                    "should have sent the original alert")
   }
 
+  // MARK: - Clearing Individual Alerts
+
+  func testWhenCleared_alertIsRemoved() {
+    // given
+    let alert = Alert("to be cleared")
+    sut.postAlert(alert: alert)
+
+    // when
+    sut.clear(alert: alert)
+
+    // then
+    XCTAssertEqual(sut.alertCount, 0)
+  }
 
 }
