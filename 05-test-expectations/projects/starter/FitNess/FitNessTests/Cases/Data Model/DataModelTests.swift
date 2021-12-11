@@ -56,6 +56,14 @@ class DataModelTests: XCTestCase {
     sut.steps = 100
     sut.nessie.distance = 50
   }
+  
+  func givenExpectationForNotification(alert: Alert) -> XCTestExpectation {
+    let exp = expectation(forNotification: AlertNotification.name,
+                          object: nil) { notification -> Bool in
+      return notification.alert == alert
+    }
+    return exp
+  }
 
   // MARK: - Lifecycle
 
@@ -162,10 +170,7 @@ class DataModelTests: XCTestCase {
   func testWhenStepsHit25Percent_milestoneNotificationGenerated() {
     // given
     sut.goal = 400
-    let exp = expectation(forNotification: AlertNotification.name,
-                          object: nil) { notification -> Bool in
-      return notification.alert == Alert.milestone25Percent
-    }
+    let exp = givenExpectationForNotification(alert: .milestone25Percent)
 
     // when
     sut.steps = 100
@@ -177,10 +182,7 @@ class DataModelTests: XCTestCase {
   func testWhenStepsHit50Percent_milestoneNotificationGenerated() {
     // given
     sut.goal = 400
-    let exp = expectation(forNotification: AlertNotification.name,
-                          object: nil) { notification -> Bool in
-      return notification.alert == Alert.milestone50Percent
-    }
+    let exp = givenExpectationForNotification(alert: .milestone50Percent)
 
     // when
     sut.steps = 200
@@ -192,10 +194,7 @@ class DataModelTests: XCTestCase {
   func testWhenStepsHit75Percent_milestoneNotificationGenerated() {
     // given
     sut.goal = 400
-    let exp = expectation(forNotification: AlertNotification.name,
-                          object: nil) { notification -> Bool in
-      return notification.alert == Alert.milestone75Percent
-    }
+    let exp = givenExpectationForNotification(alert: .milestone75Percent)
 
     // when
     sut.steps = 300
@@ -207,10 +206,7 @@ class DataModelTests: XCTestCase {
   func testWhenStepsHit100Percent_milestoneNotificationGenerated() {
     // given
     sut.goal = 400
-    let exp = expectation(forNotification: AlertNotification.name,
-                          object: nil) { notification -> Bool in
-      return notification.alert == Alert.goalComplete
-    }
+    let exp = givenExpectationForNotification(alert: .goalComplete)
 
     // when
     sut.steps = 400
