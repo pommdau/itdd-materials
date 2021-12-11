@@ -38,7 +38,14 @@ class DataModel {
   // MARK: - Updates due to distance
   func updateForSteps() {
     guard let goal = goal else { return }
-    if Double(steps) >= Double(goal) * 0.25 {
+    
+    if Double(steps) >= Double(goal) * 1.00 {
+      AlertCenter.instance.postAlert(alert: Alert.goalComplete)
+    } else if Double(steps) >= Double(goal) * 0.75 {
+      AlertCenter.instance.postAlert(alert: Alert.milestone75Percent)
+    } else if Double(steps) >= Double(goal) * 0.50 {
+      AlertCenter.instance.postAlert(alert: Alert.milestone50Percent)
+    }  else if Double(steps) >= Double(goal) * 0.25 {
       AlertCenter.instance.postAlert(alert: Alert.milestone25Percent)
     }
   }

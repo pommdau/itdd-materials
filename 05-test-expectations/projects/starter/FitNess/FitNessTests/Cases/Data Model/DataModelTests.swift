@@ -43,6 +43,7 @@ class DataModelTests: XCTestCase {
   }
 
   override func tearDownWithError() throws {
+    AlertCenter.instance.clearAlerts()
     sut = nil
     try super.tearDownWithError()
   }
@@ -172,5 +173,50 @@ class DataModelTests: XCTestCase {
     // then
     wait(for: [exp], timeout: 1)
   }
+  
+  func testWhenStepsHit50Percent_milestoneNotificationGenerated() {
+    // given
+    sut.goal = 400
+    let exp = expectation(forNotification: AlertNotification.name,
+                          object: nil) { notification -> Bool in
+      return notification.alert == Alert.milestone50Percent
+    }
 
+    // when
+    sut.steps = 200
+
+    // then
+    wait(for: [exp], timeout: 1)
+  }
+  
+  func testWhenStepsHit75Percent_milestoneNotificationGenerated() {
+    // given
+    sut.goal = 400
+    let exp = expectation(forNotification: AlertNotification.name,
+                          object: nil) { notification -> Bool in
+      return notification.alert == Alert.milestone75Percent
+    }
+
+    // when
+    sut.steps = 300
+
+    // then
+    wait(for: [exp], timeout: 1)
+  }
+  
+  func testWhenStepsHit100Percent_milestoneNotificationGenerated() {
+    // given
+    sut.goal = 400
+    let exp = expectation(forNotification: AlertNotification.name,
+                          object: nil) { notification -> Bool in
+      return notification.alert == Alert.goalComplete
+    }
+
+    // when
+    sut.steps = 400
+
+    // then
+    wait(for: [exp], timeout: 1)
+  }
+  
 }
