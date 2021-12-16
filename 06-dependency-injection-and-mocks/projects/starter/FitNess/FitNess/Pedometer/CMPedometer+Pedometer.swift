@@ -17,9 +17,10 @@ extension CMPedometer: Pedometer {
   
   // MARK: - Function
   
-  func start() {
+  func start(completion: @escaping (Error?) -> Void) {
     startEventUpdates { event, error in
-      
+      completion(error)
     }
   }
+  
 }
