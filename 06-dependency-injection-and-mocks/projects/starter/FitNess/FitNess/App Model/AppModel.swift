@@ -31,6 +31,11 @@ class AppModel {
       AlertCenter.instance.postAlert(alert: .noPedometer)
       return
     }
+    
+    guard !pedometer.permissionDeclined else {
+      AlertCenter.instance.postAlert(alert: .notAuthorized)
+      return
+    }
 
     appState = .inProgress
     startPedometer()
