@@ -219,5 +219,33 @@ class AppModelTests: XCTestCase {
     // then
     XCTAssertTrue(mockPedometer.started)
   }
+  
+  func testPedometerNotAvailable_whenStarted_doesNotStart() {
+   // given
+   givenGoalSet()
+   mockPedometer.pedometerAvailable = false
+
+   // when
+   try! sut.start()
+
+   // then
+   XCTAssertEqual(sut.appState, .notStarted)
+  }
+  
+  func testPedometerNotAvailable_whenStarted_generatesAlert() {
+    // given
+    givenGoalSet()
+    mockPedometer.pedometerAvailable = false
+    let exp = expectation(forNotification: AlertNotification.name,
+                          object: nil,
+                          handler: alertHandler(.noPedometer))
+
+    // when
+    try! sut.start()
+
+    // then
+    wait(for: [exp], timeout: 1)
+  }
+
 
 }

@@ -41,5 +41,7 @@ func getRootViewController() -> RootViewController {
     .rootViewController as? RootViewController else {
     assert(false, "Did not a get RootViewController")
   }
+  AppModel.instance.pedometer = MockPedometer()
+  
   return controller
 }

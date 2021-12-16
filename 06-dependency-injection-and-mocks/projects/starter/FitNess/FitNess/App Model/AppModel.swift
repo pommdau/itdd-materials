@@ -13,7 +13,7 @@ class AppModel {
   }
   var stateChangedCallback: ((AppModel) -> Void)?
   
-  let pedometer: Pedometer
+  var pedometer: Pedometer
   
   // MARK: - Lifecycle
   
@@ -25,6 +25,11 @@ class AppModel {
   func start() throws {
     guard dataModel.goal != nil else {
       throw AppError.goalNotSet
+    }
+    
+    guard pedometer.pedometerAvailable else {
+      AlertCenter.instance.postAlert(alert: .noPedometer)
+      return
     }
 
     appState = .inProgress
