@@ -14,7 +14,6 @@
 		185CB20523C78CE8009F7571 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 185CB20423C78CE8009F7571 /* Assets.xcassets */; };
 		4C566FB4270D1B8B00499DB9 /* DataModel+Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C566FB3270D1B8B00499DB9 /* DataModel+Tests.swift */; };
 		4C566FB6270D1B9E00499DB9 /* AppModel+Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C566FB5270D1B9E00499DB9 /* AppModel+Tests.swift */; };
-		4C9AE35C2714E1360028C960 /* PedometerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9AE35B2714E1360028C960 /* PedometerTests.swift */; };
 		4C9AE35E2714E1930028C960 /* NessieTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9AE35D2714E1930028C960 /* NessieTests.swift */; };
 		4C9AE3612714E3950028C960 /* Error+FitNess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9AE3602714E3950028C960 /* Error+FitNess.swift */; };
 		4CBCDEB32701423C00E8992C /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CBCDEB22701423C00E8992C /* RootViewController.swift */; };
@@ -38,6 +37,9 @@
 		4CCF441C270687DC00DD29AB /* DataModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CCF441B270687DC00DD29AB /* DataModelTests.swift */; };
 		4CF6A59B270A567F006F0292 /* ViewControllers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF6A59A270A567F006F0292 /* ViewControllers.swift */; };
 		4CF6A59E270D02F1006F0292 /* RootViewController+Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF6A59D270D02F1006F0292 /* RootViewController+Tests.swift */; };
+		DA116B79276B4FCA007F1BC1 /* Pedometer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA116B78276B4FCA007F1BC1 /* Pedometer.swift */; };
+		DA116B7B276B4FE8007F1BC1 /* CMPedometer+Pedometer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA116B7A276B4FE8007F1BC1 /* CMPedometer+Pedometer.swift */; };
+		DA116B7E276B5393007F1BC1 /* MockPedometer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA116B7D276B5393007F1BC1 /* MockPedometer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,7 +62,6 @@
 		185CB20923C78CE8009F7571 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4C566FB3270D1B8B00499DB9 /* DataModel+Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DataModel+Tests.swift"; sourceTree = "<group>"; };
 		4C566FB5270D1B9E00499DB9 /* AppModel+Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppModel+Tests.swift"; sourceTree = "<group>"; };
-		4C9AE35B2714E1360028C960 /* PedometerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PedometerTests.swift; sourceTree = "<group>"; };
 		4C9AE35D2714E1930028C960 /* NessieTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NessieTests.swift; sourceTree = "<group>"; };
 		4C9AE3602714E3950028C960 /* Error+FitNess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Error+FitNess.swift"; sourceTree = "<group>"; };
 		4CBCDEB22701423C00E8992C /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
@@ -85,6 +86,9 @@
 		4CCF441B270687DC00DD29AB /* DataModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModelTests.swift; sourceTree = "<group>"; };
 		4CF6A59A270A567F006F0292 /* ViewControllers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllers.swift; sourceTree = "<group>"; };
 		4CF6A59D270D02F1006F0292 /* RootViewController+Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RootViewController+Tests.swift"; sourceTree = "<group>"; };
+		DA116B78276B4FCA007F1BC1 /* Pedometer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pedometer.swift; sourceTree = "<group>"; };
+		DA116B7A276B4FE8007F1BC1 /* CMPedometer+Pedometer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CMPedometer+Pedometer.swift"; sourceTree = "<group>"; };
+		DA116B7D276B5393007F1BC1 /* MockPedometer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPedometer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +132,7 @@
 		185CB1FA23C78CE6009F7571 /* FitNess */ = {
 			isa = PBXGroup;
 			children = (
+				DA116B77276B4FB2007F1BC1 /* Pedometer */,
 				4CBCDEB82701427500E8992C /* App Layer */,
 				4CBCDEBF270142F400E8992C /* App Model */,
 				4CCF44122706843900DD29AB /* Data Model */,
@@ -163,13 +168,6 @@
 				4C9AE3602714E3950028C960 /* Error+FitNess.swift */,
 			);
 			path = Helpers;
-			sourceTree = "<group>";
-		};
-		4C9AE367271619900028C960 /* Mocks */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Mocks;
 			sourceTree = "<group>";
 		};
 		4CBCDEB82701427500E8992C /* App Layer */ = {
@@ -251,7 +249,6 @@
 			isa = PBXGroup;
 			children = (
 				4CCF440F27052F9C00DD29AB /* Cases */,
-				4C9AE367271619900028C960 /* Mocks */,
 				4CCF441D270A555E00DD29AB /* Test Classes */,
 				4CF6A59C270D02DB006F0292 /* Test Extensions */,
 			);
@@ -266,6 +263,7 @@
 				4CCF44192706878200DD29AB /* Data Model */,
 				4CCF441127052FAC00DD29AB /* UI Layer */,
 				4CBEFC96270D24BC00EB190B /* Alerts */,
+				DA116B7C276B5370007F1BC1 /* Mock */,
 			);
 			path = Cases;
 			sourceTree = "<group>";
@@ -300,7 +298,6 @@
 			children = (
 				4CCF441B270687DC00DD29AB /* DataModelTests.swift */,
 				4C9AE35D2714E1930028C960 /* NessieTests.swift */,
-				4C9AE35B2714E1360028C960 /* PedometerTests.swift */,
 			);
 			path = "Data Model";
 			sourceTree = "<group>";
@@ -321,6 +318,23 @@
 				4C566FB2270D1B6A00499DB9 /* Data Model */,
 			);
 			path = "Test Extensions";
+			sourceTree = "<group>";
+		};
+		DA116B77276B4FB2007F1BC1 /* Pedometer */ = {
+			isa = PBXGroup;
+			children = (
+				DA116B78276B4FCA007F1BC1 /* Pedometer.swift */,
+				DA116B7A276B4FE8007F1BC1 /* CMPedometer+Pedometer.swift */,
+			);
+			path = Pedometer;
+			sourceTree = "<group>";
+		};
+		DA116B7C276B5370007F1BC1 /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				DA116B7D276B5393007F1BC1 /* MockPedometer.swift */,
+			);
+			path = Mock;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -458,10 +472,12 @@
 				185CB1FE23C78CE6009F7571 /* SceneDelegate.swift in Sources */,
 				4CBEFC9B270D25B200EB190B /* Alert.swift in Sources */,
 				4CBEFC9D270D25FD00EB190B /* AlertCenter.swift in Sources */,
+				DA116B7B276B4FE8007F1BC1 /* CMPedometer+Pedometer.swift in Sources */,
 				4CBCDEB32701423C00E8992C /* RootViewController.swift in Sources */,
 				4C9AE3612714E3950028C960 /* Error+FitNess.swift in Sources */,
 				4CBEFC9F270D262600EB190B /* AlertViewController.swift in Sources */,
 				4CCF44162706846400DD29AB /* Nessie.swift in Sources */,
+				DA116B79276B4FCA007F1BC1 /* Pedometer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -471,6 +487,7 @@
 			files = (
 				4CF6A59E270D02F1006F0292 /* RootViewController+Tests.swift in Sources */,
 				4C566FB4270D1B8B00499DB9 /* DataModel+Tests.swift in Sources */,
+				DA116B7E276B5393007F1BC1 /* MockPedometer.swift in Sources */,
 				4CBEFCAE270FA0A200EB190B /* AlertViewControllerTests.swift in Sources */,
 				4CCF441C270687DC00DD29AB /* DataModelTests.swift in Sources */,
 				4CCF440E27052F8000DD29AB /* StepCountControllerTests.swift in Sources */,
@@ -481,7 +498,6 @@
 				4CF6A59B270A567F006F0292 /* ViewControllers.swift in Sources */,
 				4CBEFCA8270E6E2F00EB190B /* RootViewControllerTests.swift in Sources */,
 				4CCF440C2705284300DD29AB /* AppModelTests.swift in Sources */,
-				4C9AE35C2714E1360028C960 /* PedometerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

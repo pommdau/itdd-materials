@@ -34,12 +34,17 @@ import XCTest
 @testable import FitNess
 
 class AppModelTests: XCTestCase {
+  // MARK: - Properties
   //swiftlint:disable implicitly_unwrapped_optional
   var sut: AppModel!
+  var mockPedometer: MockPedometer!
+  
+  // MARK: - Lifecycle
 
   override func setUpWithError() throws {
     try super.setUpWithError()
-    sut = AppModel()
+    mockPedometer = MockPedometer()
+    sut = AppModel(pedometer: mockPedometer)
   }
 
   override func tearDownWithError() throws {
@@ -202,4 +207,17 @@ class AppModelTests: XCTestCase {
   }
 
   // MARK: - Pedometer
+
+  /// このテストは、アプリモデルを起動すると歩数計も起動することを確認することを目的としています。
+  func testAppModel_whenStarted_startsPedometer() {
+    //given
+    givenGoalSet()
+    
+    // when
+    try! sut.start()
+    
+    // then
+    XCTAssertTrue(mockPedometer.started)
+  }
+
 }
