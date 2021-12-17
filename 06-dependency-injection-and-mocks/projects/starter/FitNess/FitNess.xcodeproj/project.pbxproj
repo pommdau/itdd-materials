@@ -42,6 +42,7 @@
 		DA116B7E276B5393007F1BC1 /* MockPedometer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA116B7D276B5393007F1BC1 /* MockPedometer.swift */; };
 		DA116B80276C095B007F1BC1 /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA116B7F276C095B007F1BC1 /* MockData.swift */; };
 		DA116B84276C0BD5007F1BC1 /* SimulatorPedometer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA116B82276C0B8E007F1BC1 /* SimulatorPedometer.swift */; };
+		DA8469AD276C0CAA00A1D3CC /* ChaseViewPartialMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8469AC276C0CAA00A1D3CC /* ChaseViewPartialMock.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +94,7 @@
 		DA116B7D276B5393007F1BC1 /* MockPedometer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPedometer.swift; sourceTree = "<group>"; };
 		DA116B7F276C095B007F1BC1 /* MockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockData.swift; sourceTree = "<group>"; };
 		DA116B82276C0B8E007F1BC1 /* SimulatorPedometer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimulatorPedometer.swift; sourceTree = "<group>"; };
+		DA8469AC276C0CAA00A1D3CC /* ChaseViewPartialMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChaseViewPartialMock.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -339,6 +341,7 @@
 			children = (
 				DA116B7D276B5393007F1BC1 /* MockPedometer.swift */,
 				DA116B7F276C095B007F1BC1 /* MockData.swift */,
+				DA8469AC276C0CAA00A1D3CC /* ChaseViewPartialMock.swift */,
 			);
 			path = Mock;
 			sourceTree = "<group>";
@@ -496,6 +499,7 @@
 				4C566FB4270D1B8B00499DB9 /* DataModel+Tests.swift in Sources */,
 				DA116B7E276B5393007F1BC1 /* MockPedometer.swift in Sources */,
 				4CBEFCAE270FA0A200EB190B /* AlertViewControllerTests.swift in Sources */,
+				DA8469AD276C0CAA00A1D3CC /* ChaseViewPartialMock.swift in Sources */,
 				4CCF441C270687DC00DD29AB /* DataModelTests.swift in Sources */,
 				DA116B80276C095B007F1BC1 /* MockData.swift in Sources */,
 				4CCF440E27052F8000DD29AB /* StepCountControllerTests.swift in Sources */,

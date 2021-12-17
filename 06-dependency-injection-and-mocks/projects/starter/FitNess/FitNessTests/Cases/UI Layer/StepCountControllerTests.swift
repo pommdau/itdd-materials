@@ -36,11 +36,14 @@ import XCTest
 class StepCountControllerTests: XCTestCase {
   //swiftlint:disable implicitly_unwrapped_optional
   var sut: StepCountController!
+  var mockChaseView: ChaseViewPartialMock!
 
   override func setUpWithError() throws {
     try super.setUpWithError()
     let rootController = getRootViewController()
     sut = rootController.stepController
+    mockChaseView = ChaseViewPartialMock()
+    sut.chaseView = mockChaseView
   }
 
   override func tearDownWithError() throws {
@@ -235,4 +238,18 @@ class StepCountControllerTests: XCTestCase {
     let chaseView = sut.chaseView
     XCTAssertEqual(chaseView?.state, .inProgress)
   }
+  
+  func testChaseView_whenDataSent_isUpdated() {
+    // given
+    givenInProgress()
+
+    // when
+    let data = MockData(steps:500, distanceTravelled:10)
+    (AppModel.instance.pedometer as! MockPedometer).sendData(data)
+
+    // then
+    XCTAssertTrue(mockChaseView.updateStateCalled)
+    XCTAssertEqual(mockChaseView.lastRunner, 0.5)
+  }
+
 }
