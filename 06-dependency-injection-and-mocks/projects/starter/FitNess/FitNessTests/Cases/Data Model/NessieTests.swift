@@ -46,4 +46,13 @@ class NessieTests: XCTestCase {
     sut = nil
     try super.tearDownWithError()
   }
+  
+  func testNessie_whenUpdated_incrementsDistance() {
+    // when
+    sut.incrementDistance()
+
+    // then
+    XCTAssertEqual(sut.distance, sut.velocity)
+  }
+
 }
