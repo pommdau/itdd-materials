@@ -41,6 +41,7 @@
 		DA116B7B276B4FE8007F1BC1 /* CMPedometer+Pedometer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA116B7A276B4FE8007F1BC1 /* CMPedometer+Pedometer.swift */; };
 		DA116B7E276B5393007F1BC1 /* MockPedometer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA116B7D276B5393007F1BC1 /* MockPedometer.swift */; };
 		DA116B80276C095B007F1BC1 /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA116B7F276C095B007F1BC1 /* MockData.swift */; };
+		DA116B84276C0BD5007F1BC1 /* SimulatorPedometer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA116B82276C0B8E007F1BC1 /* SimulatorPedometer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +92,7 @@
 		DA116B7A276B4FE8007F1BC1 /* CMPedometer+Pedometer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CMPedometer+Pedometer.swift"; sourceTree = "<group>"; };
 		DA116B7D276B5393007F1BC1 /* MockPedometer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPedometer.swift; sourceTree = "<group>"; };
 		DA116B7F276C095B007F1BC1 /* MockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockData.swift; sourceTree = "<group>"; };
+		DA116B82276C0B8E007F1BC1 /* SimulatorPedometer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimulatorPedometer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -326,6 +328,7 @@
 			isa = PBXGroup;
 			children = (
 				DA116B78276B4FCA007F1BC1 /* Pedometer.swift */,
+				DA116B82276C0B8E007F1BC1 /* SimulatorPedometer.swift */,
 				DA116B7A276B4FE8007F1BC1 /* CMPedometer+Pedometer.swift */,
 			);
 			path = Pedometer;
@@ -476,6 +479,7 @@
 				4CBEFC9B270D25B200EB190B /* Alert.swift in Sources */,
 				4CBEFC9D270D25FD00EB190B /* AlertCenter.swift in Sources */,
 				DA116B7B276B4FE8007F1BC1 /* CMPedometer+Pedometer.swift in Sources */,
+				DA116B84276C0BD5007F1BC1 /* SimulatorPedometer.swift in Sources */,
 				4CBCDEB32701423C00E8992C /* RootViewController.swift in Sources */,
 				4C9AE3612714E3950028C960 /* Error+FitNess.swift in Sources */,
 				4CBEFC9F270D262600EB190B /* AlertViewController.swift in Sources */,

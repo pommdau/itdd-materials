@@ -3,6 +3,15 @@ import CoreMotion
 
 class AppModel {
   static let instance = AppModel()
+  
+  static var pedometerFactory: (() -> Pedometer) = {
+    #if targetEnvironment(simulator)
+    return SimulatorPedometer()
+    #else
+    return CMPedometer()
+    #endif
+  }
+  
   let dataModel = DataModel()
 
   private(set) var appState: AppState = .notStarted {
@@ -16,9 +25,10 @@ class AppModel {
   
   // MARK: - Lifecycle
   
-  init(pedometer: Pedometer = CMPedometer()) {
+  init(pedometer: Pedometer = pedometerFactory()) {
     self.pedometer = pedometer
   }
+
 
   // MARK: - App Lifecycle
   func start() throws {
